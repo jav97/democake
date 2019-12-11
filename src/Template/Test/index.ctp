@@ -12,7 +12,7 @@
 </nav>
 <div class="test index large-9 medium-8 columns content">
     <h3><?= __('Students') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-striped table-hover" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -30,9 +30,8 @@
                 <td><?= h($test->last_name) ?></td>
                 <td><?= h($test->email) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $test->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $test->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $test->id], ['confirm' => __('Are you sure you want to delete # {0}?', $test->id)]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $test->id], ['class' => 'btn btn-sm btn-warning']) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $test->id], ['confirm' => __('Are you sure you want to delete # {0}?', $test->id), 'class' => 'btn btn-sm btn-danger']) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

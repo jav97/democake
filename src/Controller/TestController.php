@@ -53,11 +53,11 @@ class TestController extends AppController
         if ($this->request->is('post')) {
             $test = $this->Test->patchEntity($test, $this->request->getData());
             if ($this->Test->save($test)) {
-                $this->Flash->success(__('The test has been saved.'));
+                $this->Flash->success(__('The Student has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The test could not be saved. Please, try again.'));
+            $this->Flash->error(__('The Student could not be saved. Please, try again.'));
         }
         $this->set(compact('test'));
     }
@@ -77,11 +77,11 @@ class TestController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $test = $this->Test->patchEntity($test, $this->request->getData());
             if ($this->Test->save($test)) {
-                $this->Flash->success(__('The test has been saved.'));
+                $this->Flash->success(__('The Student has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The test could not be saved. Please, try again.'));
+            $this->Flash->error(__('The Student could not be saved. Please, try again.'));
         }
         $this->set(compact('test'));
     }
@@ -98,9 +98,9 @@ class TestController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $test = $this->Test->get($id);
         if ($this->Test->delete($test)) {
-            $this->Flash->success(__('The test has been deleted.'));
+            $this->Flash->success(__('The Student has been deleted.'));
         } else {
-            $this->Flash->error(__('The test could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The Student could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
